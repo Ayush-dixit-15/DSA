@@ -1,0 +1,70 @@
+// this is macros
+// #include<iostream>
+// using namespace std;
+// #define PI 3.14
+// int main(){
+// int r =5;
+// // double pi = 3.14;
+// int area =PI * r* r;
+// cout<<"area is "<<area<<endl;
+// return 0;
+// }
+
+
+
+// global variable
+// this is used to share the varibales between functions
+// #include<iostream>
+// using namespace std;
+
+// int score = 15;
+
+// int main(){
+// cout<<score<<endl;
+// return 0;
+// }
+
+
+
+
+// inline functions
+// #include<iostream>
+// using namespace std;
+// inline int getMax(int &a, int &b){
+//     return (a>b) ? a : b ;
+// }
+// // single line function can be made inline
+// // 2-3 lined finction may/maynot
+// // greater than it are not allowed to be declared inline
+// int main(){
+//     int a = 5;
+//     int b= 9;
+//     cout<<getMax(a,b);
+//     a = a+6;
+//     b=b+1;
+//     cout<<getMax(a,b);
+// return 0;
+// }
+
+
+// default arguments
+#include<iostream>
+using namespace std;
+void print(int arr[], int size, int start =0){
+    // the start initialised here is a default or we can say is an optional argument which may/maynot be passed it is not mandatory if nit passed, thevalue 0 will be initalised here else the argumental value
+    // second thing the default value process starts from the very right of the arguments that means you cannot make an argumnet default wothout making its right ar
+    for (int i = 0; i < size; i++)
+    {
+        cout<<arr[i];
+    }
+    
+}
+using namespace std;
+int main(){
+    int arr[5]={1,3,4,5,6};
+    int size = 5;
+    print(arr, 5,2);
+    print(arr,5);
+
+return 0;
+}

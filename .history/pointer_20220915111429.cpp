@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+int main(){
+int num =5;
+
+int *ptr = &num;
+cout<<"value"<<*ptr<<endl;
+// it i
+cout<<"address"<<ptr<<endl;
+
+double d =4.3;
+double *p =&d;
+cout<<"value"<<*p<<endl;
+cout<<"address"<<p<<endl;
+cout<<sizeof(num)<<endl;
+cout<<sizeof(ptr)<<endl;
+cout<<sizeof(p)<<endl;
+cout<<sizeof(*p)<<endl;
+cout<<sizeof(d)<<endl;
+
+
+
+
+return 0;
+}

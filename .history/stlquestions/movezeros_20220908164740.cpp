@@ -1,0 +1,1 @@
+// move al zeros to right without altrring the order of the array

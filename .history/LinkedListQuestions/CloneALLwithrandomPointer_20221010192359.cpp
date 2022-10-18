@@ -1,0 +1,152 @@
+// //{ Driver Code Starts
+// #include <bits/stdc++.h>
+
+// using namespace std;
+// /* Link list Node */
+// struct Node {
+//     int data;
+//     Node *next;
+//     Node *arb;
+
+//     Node(int x) {
+//         data = x;
+//         next = NULL;
+//         arb = NULL;
+//     }
+// };
+
+
+
+// // } Driver Code Ends
+// class Solution
+// {
+//     private:
+//     void insertAtTail(Node* &head, Node* &tail, int data){
+//         Node *newNode = new Node(data);
+//         if(head==NULL){
+//             head = newNode;
+//             tail = newNode;
+//             return;
+//         }
+//         else{
+//             tail->next = newNode;
+//             tail = newNode;
+//         }
+        
+//     }
+//     public:
+//     Node *copyList(Node *head)
+//     {
+//         Node* cloneHead = NULL;
+//         Node* cloneTail = NULL;
+//         Node*temp = head;
+//         while(temp!=NULL){
+//            insertAtTail(cloneHead, cloneTail, temp->data); 
+//            temp = temp->next;
+//         }
+//         // create a map
+//         unordered_map<Node*, Node*>mapping;
+//         temp = head;
+//         Node* temp2 = cloneHead;
+//         while(temp!=NULL){
+//             mapping[temp] = temp2;
+//             temp = temp->next;
+//             temp2 = temp2->next;
+//         }
+//         temp  = head;
+//         temp2 = cloneHead;
+//         while(temp!=NULL){
+//             temp2->arb = mapping[temp->arb];
+//             temp = temp->next;
+//             temp2 = temp2->next;
+//         }
+//         return cloneHead;
+//     }
+
+// };
+
+// //{ Driver Code Starts.
+
+
+// void print(Node *root) {
+//     Node *temp = root;
+//     while (temp != NULL) {
+//         int k;
+//         if (temp->arb == NULL)
+//             k = -1;
+//         else
+//             k = temp->arb->data;
+//         cout << temp->data << " " << k << " ";
+//         temp = temp->next;
+//     }
+// }
+
+
+// void append(Node **head_ref, Node **tail_ref, int new_data) {
+
+//     Node *new_node = new Node(new_data);
+//     if (*head_ref == NULL) {
+//         *head_ref = new_node;
+//     } else
+//         (*tail_ref)->next = new_node;
+//     *tail_ref = new_node;
+// }
+
+// bool validation(Node *head, Node *res) {
+
+
+//     Node *temp1 = head;
+//     Node *temp2 = res;
+
+//     int len1 = 0, len2 = 0;
+//     while (temp1 != NULL) {
+//         len1++;
+//         temp1 = temp1->next;
+//     }
+//     while (temp2 != NULL) {
+//         len2++;
+//         temp2 = temp2->next;
+//     }
+
+//     /*if lengths not equal */
+
+//     if (len1 != len2) return false;
+
+//     temp1 = head;
+//     temp2 = res;
+//     map<Node*,Node*> a;
+//     while (temp1 != NULL) {
+        
+//         if(temp1==temp2)
+//             return false;
+        
+//         if (temp1->data != temp2->data) return false;
+//         if (temp1->arb != NULL and temp2->arb != NULL) {
+//             if (temp1->arb->data != temp2->arb->data)
+//                 return false;
+//         } else if (temp1->arb != NULL and temp2->arb == NULL)
+//             return false;
+//           else if (temp1->arb == NULL and temp2->arb != NULL)
+//             return false;
+//         a[temp1]=temp2;
+//         temp1 = temp1->next;
+//         temp2 = temp2->next;
+//     }
+    
+
+//     temp1 = head;
+//     temp2 = res;
+//     while (temp1 != NULL) {
+        
+//         if (temp1->arb != NULL and temp2->arb != NULL) {
+//             if (a[temp1->arb] != temp2->arb) return false;
+//         }
+//         temp1 = temp1->next;
+//         temp2 = temp2->next;
+//     }
+//     return true;
+// }
+
+
+
+//
