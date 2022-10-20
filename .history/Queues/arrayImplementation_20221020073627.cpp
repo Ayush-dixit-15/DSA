@@ -1,0 +1,18 @@
+#include<iostream>
+using namespace std;
+class Queue{
+    int *arr;
+    int size;
+    int front;
+    int rear;
+    Queue(int size){
+        this->size = size;
+        arr = new int[size];
+        front = arr[0];
+        
+    }
+};
+int main(){
+
+return 0;
+}
