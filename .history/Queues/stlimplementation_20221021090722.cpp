@@ -1,7 +1,6 @@
 
 #include<iostream>
 #include<queue>
-#include<stack>
 using namespace std;
 int main(){
    queue<int> q;
@@ -15,10 +14,6 @@ int main(){
    cout<<q.size()<<endl;
    cout<<q.empty()<<endl; 
    stack<int> st;
-   while(q.front()!=q.back()){
-      st.push(q.front());
-      q.pop();
-   }
-   
+    
 return 0;
 }

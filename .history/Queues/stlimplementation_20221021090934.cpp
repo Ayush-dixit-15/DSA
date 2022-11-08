@@ -19,6 +19,6 @@ int main(){
       st.push(q.front());
       q.pop();
    }
-   
+   cout<<st
 return 0;
 }

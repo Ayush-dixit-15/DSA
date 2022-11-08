@@ -19,6 +19,5 @@ int main(){
       st.push(q.front());
       q.pop();
    }
-   
 return 0;
 }
