@@ -2,7 +2,7 @@
 using namespace std;
 int partiton( int *arr, int s, int e){
     int pivot = arr[s];
-    int cnt = 0;
+    int cnt = 0; 
     for (int  i = s+1; i <=e; i++)
     {
         if(arr[i]<=pivot){
