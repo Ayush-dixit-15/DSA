@@ -150,3 +150,104 @@ cout<<isEmpty();
 // peek();
 return 0;
 }
+
+
+
+
+// Implement Multiple stacks
+
+#include <iostream>
+#include <stack>
+using namespace std;
+
+class Node{
+public:
+int data;
+Node* next;
+
+public:
+//to create new node (constructor)
+Node(int data){
+    this -> data = data;
+    this -> next = NULL;
+}
+
+};
+// stack implementation using linked list 
+class Stack{
+    public:
+Node* top ;
+    Stack(){
+        top = NULL;
+
+    }
+
+    void push(int element){
+   
+           if(top == NULL){
+            top = new Node(element);   
+           }
+           else{
+            Node* temp = new Node(element);
+            temp->next = top;
+            top = temp;
+           }
+       }
+       void pop(){
+        if(top != NULL){
+           top = top->next;
+        }
+        else{
+             cout<<"stack is underflow"<<endl;
+        }
+       }
+
+       int peak(){
+        if(top != NULL){
+            return top -> data;
+        }
+
+        else{
+            cout<<"stack is empty"<<endl;
+            return -1;
+        }
+       }
+
+       bool empty(){
+        if(top == NULL){
+            return true;
+        }
+        else{
+            return false;
+        }
+       }
+       void printStack(Node* top){
+        Node* remp = top;
+        while(remp!=NULL){
+            cout<<remp->data<<" ";
+        }
+       }
+
+      
+};
+ 
+int main()
+{
+    Stack s;
+    s.push(22);
+    s.push(43);
+    s.push(44);
+
+    cout<<s.peak()<<endl;
+
+    s.pop();
+
+    cout<<s.peak()<<endl;
+    s.pop();
+    cout<<s.peak()<<endl;
+    s.pop();
+    cout<<s.peak()<<endl;
+
+
+    return 0;  
+}
